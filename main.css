@@ -1,1 +1,9 @@
 /* Type whatever CSS you need here! */
+
+.studentPresent {
+    background-color: greenyellow;
+}
+
+.studentAbsent {
+    backgorund-color: red;
+}
