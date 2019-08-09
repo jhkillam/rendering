@@ -1,10 +1,43 @@
 
 function renderTweets(tweets) {
-    return `
-        <div class="text-center mt-5">
-            <code>${JSON.stringify(tweets)}</code>
-        </div>
-    `
+
+    function buildTweetCard(obj) {
+
+        let verificationCheck = ""
+        if (obj.user.isVerified) {
+            verificationCheck = `<i class="fas fa-user-check"></i>`
+        }
+    
+        return `
+            <div class="tweetCard">
+
+                <div class="twitterUserHeader">
+
+                    <div class="twitterProfilePic">
+                        <img width="45" src="${obj.user.profilePic}">
+                    </div>
+
+                    <div>
+                        <p class="twitterUserName">${obj.user.username} ${verificationCheck}</p>
+                        <p class="twitterHandle">${obj.user.handle}</p>
+                    </div>
+
+                </div>
+
+                <div class="tweetMessage">
+                    <p>${obj.text}</p>
+                </div>
+
+                <div class="tweetFooter">
+                    <p><i class="far fa-comment"></i> <span class="tweetFooterPadding">${obj.replies}</span> <i class="fas fa-retweet"></i> <span class="tweetFooterPadding">${obj.retweets}</span> <i class="far fa-heart"></i> <span class="tweetFooterPadding">${obj.likes}</span> <i class="far fa-envelope"></i></p>
+                </div>
+            </div>
+        `
+    }
+
+    let tweetCards = tweets.map(buildTweetCard).join("");
+    return tweetCards;
+
 }
 
 function tweets() {

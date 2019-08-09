@@ -39,7 +39,7 @@
     background-color: lightgray;
     margin: 20px;
     padding: 10px;
-    border-radius: 5%;
+    border-radius: 5px;
     flex-grow: 1;
 }
 
@@ -57,4 +57,70 @@
     color: green;
     font-weight: bold;
     font-size: 1.5em
+}
+
+.movieCardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: lightgray;
+    border-radius: 5px;
+    margin: 20px;
+    padding: 10px;
+    max-width: 600px;
+}
+
+.movieInfo {
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+    width: 360px;
+}
+
+.movieTitle {
+    margin: 0;
+}
+
+.movieYear {
+    font-size: .75em;
+}
+
+.noTextMargin {
+    margin: 0;
+}
+
+.tweetCard {
+    display: flex;
+    max-width: 450px;
+    border: 1px solid black;
+    flex-direction: column;
+    margin: 20px;
+    padding: 10px 20px;
+}
+
+.twitterUserHeader {
+    display: flex;
+}
+
+.twitterProfilePic {
+    width: 50px;
+}
+
+.twitterUserName {
+    margin: 0;
+    font-weight: bold;
+}
+
+.twitterHandle {
+    font-size: .75em;
+}
+
+.tweetFooter {
+    font-size: .75em;
+    padding: 2px;
+    height: 25px;
+}
+
+.tweetFooterPadding {
+    padding-right: 15px;
 }

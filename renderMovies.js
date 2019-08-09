@@ -1,10 +1,24 @@
 
 function renderMovies(movies) {
-    return `
-        <div class="text-center mt-5">
-            <code>${JSON.stringify(movies)}</code>
-        </div>
-    `
+
+    function buildMovieCard(obj) {
+        
+        return `
+        <div class="movieCardContainer">
+            <img width="150" src="${obj.poster}">
+            <div class="movieInfo">
+                <h3 class="movieTitle">${obj.title}</h3>
+                <p class="movieYear">${obj.year}</p>
+                <p class="noTextMargin">IMDB:</p>
+                <p>${obj.imdbRating} / 10</p>
+                <p class="noTextMargin">Rotten Tomatoes:</p>
+                <p>${obj.rottenTomatoesRating * 100}%</p>
+            </div>
+        </div>`
+    }
+
+    let movieCards = movies.map(buildMovieCard).join("");
+    return movieCards;
 }
 
 function movies() {
