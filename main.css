@@ -5,5 +5,56 @@
 }
 
 .studentAbsent {
-    backgorund-color: red;
+    background-color: red;
+}
+
+.studentRollContainer {
+    display: flex;
+    width: 200px;
+    flex-wrap: wrap;
+    justify-content: center;
+    border: 1px solid black;
+}
+
+.studentContainer {
+    height: 75px;
+    width: 175px;
+    border: 1px solid black;
+    margin: 5px;
+}
+
+.studentNameText {
+    margin: 0;
+    font-size: 2em;
+}
+
+.restaurantCardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border: 1px solid black;
+}
+
+.restaurantCard {
+    background-color: lightgray;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 5%;
+    flex-grow: 1;
+}
+
+.restaurantName {
+    margin: 0;
+    font-weight: bold;
+}
+
+.restaurantType {
+    margin: 0;
+    font-size: .75em;
+}
+
+.restaurantPriceRating {
+    color: green;
+    font-weight: bold;
+    font-size: 1.5em
 }

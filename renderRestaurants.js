@@ -2,11 +2,37 @@
 function renderRestaurants(restaurants) {
     // HINT: You can use <img /> tags that point to these playing card images: 
     // https://commons.wikimedia.org/wiki/Category:SVG_playing_cards
-    return `
-        <div class="text-center mt-5">
-            <code>${JSON.stringify(restaurants)}</code>
+    function buildRestaurantCards(obj){
+        let priceRatingDisplay = ""
+
+        switch (obj.priceRating) {
+            case 1: priceRatingDisplay = "$"
+                break;
+            case 2: priceRatingDisplay = "$$"
+                break;
+            case 3: priceRatingDisplay = "$$$"
+                break;
+            case 4: priceRatingDisplay = "$$$$"
+                break;
+            case 5: priceRatingDisplay = "$$$$$"
+                break;
+            default:
+                break;
+        }
+        
+        return `
+        <div class="restaurantCard">
+            <h3 class="restaurantName">${obj.name}</h3>
+            <p class="restaurantType">${obj.type}</p>
+            <p class="restaurantPriceRating">${priceRatingDisplay}</p>
         </div>
-    `
+        `
+    }
+
+    let restaurantRatingCards = restaurants.map(buildRestaurantCards).join("");
+
+    return `
+    <div class="restaurantCardContainer">` + restaurantRatingCards + `</div>`
 }
 
 function restaurants() {
