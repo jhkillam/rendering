@@ -1,13 +1,19 @@
 
-function renderAlbums(albums) {
-    return `
-        <div class="text-center mt-5">
-            <code>${JSON.stringify(albums)}</code>
-        </div>
-    `
+function renderAlbums(albumList) {
+    
+    console.dir(albumList);    
+
+    function buildTrackList(obj){
+        return `
+        ${obj.albums[0].title}
+        `
+    }
+
+    let trackList = albumList.map(buildTrackList).join("");
+    return trackList;
 }
 
-function albums() {
+function albumList() {
     var content = document.getElementById('content');
 
     var albumsAbstraction = [

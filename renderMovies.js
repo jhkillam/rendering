@@ -5,7 +5,7 @@ function renderMovies(movies) {
         
         return `
         <div class="movieCardContainer">
-            <img width="150" src="${obj.poster}">
+            <img class="moviePoster" src="${obj.poster}">
             <div class="movieInfo">
                 <h3 class="movieTitle">${obj.title}</h3>
                 <p class="movieYear">${obj.year}</p>
