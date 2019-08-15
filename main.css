@@ -128,3 +128,27 @@
 .tweetFooterPadding {
     padding-right: 15px;
 }
+
+.albumCover {
+    width: 75px;
+    padding-right: 10px;
+}
+
+.albumTitle {
+    display: flex;
+    align-items: baseline;
+}
+
+.trackNameContainer {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.playButton {
+    padding: 0px 20px;
+}
+
+#albumTitle {
+    border-bottom: 1px solid black;
+}

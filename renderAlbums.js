@@ -3,9 +3,52 @@ function renderAlbums(albumList) {
     
     console.dir(albumList);    
 
+
     function buildTrackList(obj){
+        // console.log("num of albums: " + obj.albums.length)
+
+        // return `
+        // <p>${obj.artist}</p>
+        // <p>${obj.albums[0].title}</p>
+        // <p>${obj.albums[0].songs[0].title}</p>
+        // <p>${obj.albums[0].songs[1].title}</p>
+        // <p>${obj.albums[0].songs[2].title}</p>
+        // <p>${obj.albums[0].songs[3].title}</p>
+        // <p>${obj.albums[0].songs[3].title}</p>
+        // `
+        // console.log("album 1: " + obj.albums[0].title)
+        
+        let artistName = `<h1 id="albumTitle">${obj.artist}</h1>`
+        let albumListHTML = ""
+
+        function buildTrackList(albumName) {
+            let trackListHTML = ""
+            for (let index = 0; index < albumName.songs.length; index++) {
+                console.log(albumName.songs[index].title)
+                trackListHTML = trackListHTML + `
+                <div class="trackNameContainer">
+                <span><i class="fas fa-play playButton"></i> ${albumName.songs[index].title}</span><span>${albumName.songs[index].length}</span>
+                </div> <hr>`
+            }
+            return trackListHTML
+        }
+
+        for (let index = 0; index < obj.albums.length; index++) {
+                albumListHTML = albumListHTML + `
+                <div class="albumTitle" id="album${index}">
+                    <img class="albumCover" src="${obj.albums[index].albumCover}" alt="${obj.albums[index].title} Album Cover">
+                    <h2>${obj.albums[index].title}</h2>
+                </div>
+                <hr>
+                <div class="albumTrackList">
+                ` + buildTrackList(obj.albums[index]) + `
+                </div>
+                `
+        }
+
         return `
-        ${obj.albums[0].title}
+        ${content.innerHTML = artistName}<hr>
+        ${albumListHTML}
         `
     }
 
